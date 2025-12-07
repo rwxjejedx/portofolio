@@ -21,7 +21,7 @@ const Navbar = () => {
         <ul 
             className={`
                 menu flex justify-between gap-3 md:gap-15 text-white
-                text-xs w-full  fixed left-1/2 -translate-x-1/2 z-33
+                text-xs w-full  fixed left-1/2 -translate-x-1/2 z-40
                 
                 
                 // Lebar dan Posisi MD (Desktop)
@@ -32,11 +32,11 @@ const Navbar = () => {
                 ${active ? "top-5 opacity-100" : "-top-3"}
             `}
         >
-            <li><a href="#" className="sm:text-lg text-base font-medium">Home</a></li>
-            <li><a href="#" className="sm:text-lg text-base font-medium">About</a></li>
-            <li><a href="#" className="sm:text-lg text-base font-medium">Tools</a></li>
-            <li><a href="#" className="sm:text-lg text-base font-medium">Portofolio</a></li>
-            <li><a href="#" className="sm:text-lg text-base font-medium">Contact</a></li>
+            <li><a href="#beranda" className="sm:text-lg text-base font-medium">Home</a></li>
+            <li><a href="#about" className="sm:text-lg text-base font-medium">About</a></li>
+            <li><a href="#skill" className="sm:text-lg text-base font-medium">Tools</a></li>
+            <li><a href="#portofolio" className="sm:text-lg text-base font-medium">Portofolio</a></li>
+            <li><a href="#contact" className="sm:text-lg text-base font-medium">Contact</a></li>
         </ul>
     </div>
   )

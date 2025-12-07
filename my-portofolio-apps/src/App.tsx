@@ -20,15 +20,15 @@ function App() {
   return (
     <>
     {/* Hero */}
-      <div className="hero flex flex-col md:flex-row gap-4 bg-white/80 backdrop-blur-md rounded-2xl md:mt-50">
-        <div className="flex-1"> 
+      <div className="hero flex flex-col md:flex-row gap-4 bg-white/80 backdrop-blur-md rounded-2xl md:mt-50 animate__animated animate__fadeInUp animate__delay-1s">
+        <div className="flex-1 animate__animated animate__fadeInUp animate__delay-2s"> 
             <div className="flex items-center p-4 rounded-2xl opacity-100 bg-white/20 backdrop-blur-md">
                 <div className="p-10 text-black">
                     <h1 className="font-bold text-xl md:text-xl xl:text-4xl mb-5"> i'm Julham Maulana </h1>
                     <p className="text-sm sm:font-medium sm:text-xl mb-5 text-justify">I design and engineer comprehensive web applications, from pixel-perfect frontend interfaces (using React) to robust, scalable backend systems. Let's transform your ideas into fast and reliable web applications.</p>
                     <div className="flex items-center gap-4">
-                        <a href="#" className="bg-zinc-700 rounded-xl p-3 hover:bg-zinc-600 border text-white">Portofolio</a>
-                        <a href="#" className="bg-zinc-700 rounded-xl p-3 hover:bg-zinc-600 border text-white">Contact</a>
+                        <a href="#portofolio" className="bg-zinc-700 rounded-xl p-3 hover:bg-zinc-600 border text-white">Portofolio</a>
+                        <a href="#contact" className="bg-zinc-700 rounded-xl p-3 hover:bg-zinc-600 border text-white">Contact</a>
                     </div>
                 </div>
             </div>
@@ -38,17 +38,17 @@ function App() {
             <img 
                 src={HeroImage} 
                 alt="Hero Background" 
-                className="w-[300px] h-[300px] object-cover rounded-2xl" 
+                className="w-[300px] h-[300px] object-cover rounded-2xl animate__animated animate__fadeInUp animate__delay-2s" loading="lazy"
             />
         </div>
     </div>
     {/* About Me */}
-    <div className="about mt-80">
-        <div className="mt-16 p-8 flex flex-col items-center justify-center text-center text-white">
+    <div className="about mt-80 " id="about">
+        <div className="mt-16 p-8 flex flex-col items-center justify-center text-center text-white" >
           <h3 className="font-extrabold text-5xl md:text-6xl mb-2">About Me</h3>
           <p className="font-semibold text-xl">A story of growth and discovery</p>
         </div>
-        <div className="text-white mt-10 flex flex-col  p-10 md:w-full lg:ml-80 lg:w-180 text-justify">
+        <div className="text-white mt-10 flex flex-col  p-10 md:w-full lg:ml-80 lg:w-180 text-justify" data-aos="fade-up" data-aos-duration="1000">
           <h5 className="font-bold text-2xl mb-1">Julham Maulana</h5>
           <p className="font-semibold text-sm mb-5">Computer Science Fresh Graduate</p>
           <p className="font-semibold text-lg mb-5">Hello! You can call me Julham. I am a Software Engineer who works with the React ecosystem and writes to teach people how to rebuild and redefine fundamental concepts through mental models. </p>
@@ -62,34 +62,34 @@ function App() {
           <img 
                 src={Js} 
                 alt="JS" 
-                className="w-10" 
+                className="w-10" loading="lazy"
             />
             <img 
                 src={Nextjs} 
                 alt="NextJs" 
-                className="w-10" 
+                className="w-10" loading="lazy"
             />
             <img 
                 src={Tailwind} 
                 alt="Tailwind" 
-                className="w-10" 
+                className="w-10" loading="lazy"
             />
             <img 
                 src={Node} 
                 alt="NodeJs" 
-                className="w-10" 
+                className="w-10" loading="lazy"
             />
             <img 
                 src={React} 
                 alt="React" 
-                className="w-10" 
+                className="w-10" loading="lazy"
             />
         </div>
         </div>
     </div>
 
     {/* skill */}
-      <div className="py-16 bg-white/5 backdrop-blur-sm">
+      <div className="py-16 bg-white/5 backdrop-blur-sm " id="skill" >
         <div className="container mx-auto px-4">
             <div className="mt-16 p-8 flex flex-col items-center justify-center text-center text-white">
               <h2 className="font-extrabold text-5xl md:text-6xl mb-20">
@@ -97,7 +97,7 @@ function App() {
               </h2>
             </div>
           
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 " data-aos="fade-up" data-aos-duration="1000" >
                 
                 <div className="bg-gray-800/50 p-6 rounded-xl shadow-lg border border-gray-700">
                     <h3 className="text-xl font-bold text-white mb-6 text-center">Front-End</h3>
@@ -105,23 +105,23 @@ function App() {
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={React} alt="React" className="w-8 h-8 mb-1" />
+                            <img src={React} alt="React" className="w-8 h-8 mb-1" loading="lazy"/>
                             <p className="text-white text-xs font-semibold">React</p>
                         </div>
                         
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Js} alt="JavaScript" className="w-8 h-8 mb-1" />
+                            <img src={Js} alt="JavaScript" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">JS</p>
                         </div>
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Tailwind} alt="Tailwind CSS" className="w-8 h-8 mb-1" />
+                            <img src={Tailwind} alt="Tailwind CSS" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Tailwind</p>
                         </div>
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Bootstrap} alt="Bootstrap" className="w-8 h-8 mb-1" />
+                            <img src={Bootstrap} alt="Bootstrap" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Bootstrap</p>
                         </div>
 
@@ -134,12 +134,12 @@ function App() {
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Node} alt="Node.js" className="w-8 h-8 mb-1" />
+                            <img src={Node} alt="Node.js" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Node.js</p>
                         </div>
 
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Nextjs} alt="Next.js" className="w-8 h-8 mb-1" />
+                            <img src={Nextjs} alt="Next.js" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Next.js</p>
                         </div>
                         
@@ -152,27 +152,27 @@ function App() {
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Github} alt="GitHub" className="w-8 h-8 mb-1" />
+                            <img src={Github} alt="GitHub" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">GitHub</p>
                         </div>
 
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Vscode} alt="VS Code" className="w-8 h-8 mb-1" />
+                            <img src={Vscode} alt="VS Code" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">VS Code</p>
                         </div>
 
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Figma} alt="Figma" className="w-8 h-8 mb-1" />
+                            <img src={Figma} alt="Figma" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Figma</p>
                         </div>
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Canva} alt="Canva" className="w-8 h-8 mb-1" />
+                            <img src={Canva} alt="Canva" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Canva</p>
                         </div>
                         
                         <div className="bg-gray-700 p-4 rounded-lg flex flex-col items-center hover:bg-gray-600 transition duration-300">
-                            <img src={Ai} alt="Adobe Illustrator" className="w-8 h-8 mb-1" />
+                            <img src={Ai} alt="Adobe Illustrator" className="w-8 h-8 mb-1" loading="lazy" />
                             <p className="text-white text-xs font-semibold">Illustrator</p>
                         </div>
 
@@ -184,17 +184,17 @@ function App() {
 
     {/* Portofolio */}
 
-    <div className="portofolio">
+    <div className="portofolio" id="portofolio">
         <div className="mt-16 p-8 text-center text-white">
               <h2 className="font-extrabold text-5xl md:text-6xl mb-20">
                 Portofolio
               </h2>
         </div>
-        <div className="container flex flex-col md:flex-row gap-4 justify-center">
+        <div className="container flex flex-col md:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-duration="1000">
           <div className="card bg-white/100 rounded-xl">
            <div className="p-4 rounded-lg">
               <p className="font-bold text-xl mb-4 text-black text-center">Website Perumahan</p>
-                <img src={proyek1} alt="React" className="w-fit mb-5" />
+                <img src={proyek1} alt="React" className="w-fit mb-5" loading="lazy" />
                 <a 
                       href="#" 
                       className="bg-blue-600 p-3 text-white rounded font-semibold hover:bg-blue-700 transition duration-300 
@@ -208,7 +208,7 @@ function App() {
               <div className="p-4 rounded-lg">
                   <p className="font-bold text-xl mb-4 text-black text-center">Brosur Perumahan</p>
                   
-                  <img src={proyek2} alt="Brosur Perumahan" className="w-fit mb-5 " /> 
+                  <img src={proyek2} alt="Brosur Perumahan" className="w-fit mb-5 " loading="lazy" /> 
                   
                   <a 
                       href="#" 
@@ -223,14 +223,14 @@ function App() {
     </div>
 
     {/* Expirience Sections */}
-    <div className="expirience mt-20">
+    <div className="expirience mt-20" id="pengalaman">
       <div className="mt-30 p-8 text-center text-white">
               <h2 className="font-extrabold text-5xl md:text-6xl mb-20">
                 Experience
               </h2>
         </div>
         
-        <div className="flex flex-col md:flex-row text-white">
+        <div className="flex flex-col md:flex-row text-white" data-aos="fade-up" data-aos-duration="5000">
         <div className="ml-2 w-100 p-1 md:p-4">
           <p className="font-bold text-xl">SEP 2017- NOV 2025</p>
         </div>
@@ -255,7 +255,7 @@ function App() {
     </div>
 
     {/* Testimoni */}
-    <div className="testimoni h-200">
+    <div className="testimoni h-200" id="testimoni">
     
     <div className="mt-30 p-8 text-center text-white">
         <h2 className="font-extrabold text-5xl md:text-6xl mb-10">
@@ -281,14 +281,14 @@ function App() {
     </div>
 
     {/* Contact */}
-    <div className=" text-blue h-200">
+    <div className=" text-blue h-200" id="contact">
     
       <div className="mt-16 p-8 text-center text-white">
           <h2 className="font-extrabold text-5xl md:text-6xl mb-10">
               Contact Me
           </h2>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center" >
           <form action="https://formspree.io/f/xjknonyr" method="POST" className="bg-white/100 p-6 rounded-2xl shadow-xl w-11/12 md:w-3/5 lg:w-2/5 max-w-xl" autoComplete="off">
             <div className="flex flex-col gap-6">
 
