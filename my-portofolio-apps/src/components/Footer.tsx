@@ -12,10 +12,10 @@ const Footer = () => {
             <a href="#contact" className="">Contact</a>
         </div>
         <div className="flex flex-row items-center gap-3">
-                <a href="#" className="ri-github-fill ri-2x"></a>
-                <a href="#" className="ri-instagram-fill ri-2x"></a>
-                <a href="#" className="ri-twitter-fill ri-2x"></a>
-                <a href="#" className="ri-linkedin-fill ri-2x"></a>
+                <a href="https://github.com/maulanajulham" className="ri-github-fill ri-2x"></a>
+                <a href="https://www.instagram.com/maulanajulham_/" className="ri-instagram-fill ri-2x"></a>
+                <a href="https://x.com/Maulanajulham_" className="ri-twitter-fill ri-2x"></a>
+                <a href="https://www.linkedin.com/in/maulanajulham/" className="ri-linkedin-fill ri-2x"></a>
         </div>
     </div>
   )
