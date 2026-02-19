@@ -1,3 +1,4 @@
+
 const projects = [
   {
     id: "porto-website",
@@ -34,15 +35,6 @@ const projects = [
   },
 ];
 
-const tagColors: Record<string, string> = {
-  "React": "#61dafb22",
-  "TypeScript": "#3178c622",
-  "Tailwind CSS": "#38bdf822",
-  "Vite": "#a78bfa22",
-  "Node.js": "#4ade8022",
-  "Express.js": "#86efac22",
-  "REST API": "#fbbf2422",
-};
 
 function Portofolio() {
   return (
