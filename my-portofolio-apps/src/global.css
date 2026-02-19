@@ -4,7 +4,169 @@
 /* Custom global styles can go here */
 body {
   font-family: "Poppins", sans-serif;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
+  background-color: #0d0d0d;
+  color: #e8e4dd;
+  margin: 0;
+  min-height: 100vh;
 }
+
+#root {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+}
+
+/* ─── Global text brightness overrides ───────────────────────────────────────
+   All pages use inline <style> blocks with muted grey tokens.
+   We override them here so text reads clearly without touching every file.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Body / paragraph text — was #787878, #686868, #5c5c5c, #5a5a5a */
+.bio-body,
+.body-text,
+.proj-desc,
+.exp-desc,
+.tl-desc,
+.edu-note,
+.contact-blurb {
+  color: #b0aca4 !important;
+}
+
+/* Secondary labels & meta — was #505050, #4a4a4a */
+.bio-role,
+.exp-company,
+.tl-company,
+.edu-uni,
+.page-subtitle,
+.proj-page-sub,
+.form-hint {
+  color: #888 !important;
+}
+
+/* Tertiary / timestamps / uppercase labels — was #3a3a3a, #363636, #383838, #2e2e2e */
+.exp-period,
+.tl-period,
+.tl-duration,
+.exp-location,
+.tl-location,
+.edu-year,
+.exp-duration,
+.skill-label,
+.card-desc,
+.footer-nav-title,
+.footer-copy,
+.footer-status,
+.cli-label,
+.field-label,
+.tool-level,
+.legend-label,
+.legend-item {
+  color: #666 !important;
+}
+
+/* List bullets text — was #646464, #686868 */
+.exp-bullets li,
+.tl-bullets li,
+.up-to-list li {
+  color: #b0aca4 !important;
+}
+
+/* Tool names in skill cards — was #5a5a5a */
+.tool-name {
+  color: #a0a0a0 !important;
+}
+
+/* Skill card hover tool name — was #848484 */
+.skill-card:hover .tool-name {
+  color: #d0ccc5 !important;
+}
+
+/* Skill value in experience technical skills — was #686868 */
+.skill-value {
+  color: #a0a0a0 !important;
+}
+
+/* Nav links — was #4a4a4a */
+.nav-link {
+  color: #888 !important;
+}
+.nav-link.active {
+  color: #f0ede8 !important;
+}
+.nav-link:hover {
+  color: #d0ccc5 !important;
+}
+.mobile-nav-link {
+  color: #888 !important;
+}
+.mobile-nav-link.active {
+  color: #f0ede8 !important;
+}
+
+/* Footer nav links — was #3a3a3a */
+.footer-nav-link {
+  color: #888 !important;
+}
+.footer-nav-link:hover {
+  color: #ccc !important;
+}
+
+/* Footer social links */
+.footer-social-link {
+  color: #888 !important;
+}
+
+/* Contact link items */
+.cli-value {
+  color: #a0a0a0 !important;
+}
+.contact-link-item:hover .cli-value {
+  color: #d0ccc5 !important;
+}
+
+/* Cert items */
+.cert-item {
+  color: #a0a0a0 !important;
+}
+
+/* Project tags */
+.proj-tag {
+  color: #888 !important;
+}
+.proj-card:hover .proj-tag {
+  color: #b0b0b0 !important;
+}
+
+/* "What I'm up to" bullets strong */
+.up-to-list li strong {
+  color: #e8e4dd !important;
+}
+
+/* Open to work banner text */
+.open-banner {
+  color: #888 !important;
+}
+
+/* Status pill in footer */
+.footer-status {
+  color: #666 !important;
+}
+
+/* Ghost bullet dots — keep very dark, they're decorative */
+.tl-bullets li::before,
+.exp-bullets li::before {
+  color: #555 !important;
+}
+
+/* Placeholder dots in skill cards */
+.tool-icon-dot {
+  background: #555 !important;
+}
+
+/* Timeline / experience text that was too muted */
+.exp-period, .tl-period { color: #777 !important; }
+.exp-location, .tl-location { color: #666 !important; }
+.exp-company, .tl-company { color: #999 !important; }
+.edu-uni { color: #999 !important; }
+.edu-year { color: #666 !important; }
+.edu-note { color: #a0a0a0 !important; }
+.cert-year { color: #666 !important; }
