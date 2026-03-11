@@ -15,16 +15,19 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from './context/ThemeContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Preloader />
-      <div className='container mx-auto px-4'>
-        <Navbar />
-        <App />
-        <Footer />
-      </div>
+      <ThemeProvider>
+        <Preloader />
+        <div className='container mx-auto px-4'>
+          <Navbar />
+          <App />
+          <Footer />
+        </div>
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )

@@ -1,172 +1,424 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-/* Custom global styles can go here */
+/* ─── Theme Variables ─────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --bg:            #0d0d0d;
+  --text-primary:  #f0ede8;
+}
+
+[data-theme="light"] {
+  --bg:            #ffffff;
+  --text-primary:  #111;
+}
+
+/* ─── Base ────────────────────────────────────────────────── */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #0d0d0d;
-  color: #e8e4dd;
+  background-color: var(--bg);
+  color: var(--text-primary);
   margin: 0;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
-  background-color: #0d0d0d;
+  background-color: var(--bg);
   min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
-/* ─── Global text brightness overrides ───────────────────────────────────────
-   All pages use inline <style> blocks with muted grey tokens.
-   We override them here so text reads clearly without touching every file.
-   ──────────────────────────────────────────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════════
+   LIGHT MODE OVERRIDES
+   ══════════════════════════════════════════════════════════════ */
 
-/* Body / paragraph text — was #787878, #686868, #5c5c5c, #5a5a5a */
-.bio-body,
-.body-text,
-.proj-desc,
-.exp-desc,
-.tl-desc,
-.edu-note,
-.contact-blurb {
-  color: #b0aca4 !important;
+/* ─── Page backgrounds ─────────────────────────────────────── */
+[data-theme="light"] .about-page,
+[data-theme="light"] .contact-page,
+[data-theme="light"] .exp-page,
+[data-theme="light"] .home-page,
+[data-theme="light"] .blog-page,
+[data-theme="light"] .projects-page,
+[data-theme="light"] .detail-page,
+[data-theme="light"] .admin-page,
+[data-theme="light"] .login-page {
+  background: #ffffff !important;
+  color: #111 !important;
 }
 
-/* Secondary labels & meta — was #505050, #4a4a4a */
-.bio-role,
-.exp-company,
-.tl-company,
-.edu-uni,
-.page-subtitle,
-.proj-page-sub,
-.form-hint {
+/* ─── H1 / big headings ────────────────────────────────────── */
+[data-theme="light"] .page-title,
+[data-theme="light"] .hero-name,
+[data-theme="light"] .blog-page-title,
+[data-theme="light"] .proj-page-title,
+[data-theme="light"] .detail-title,
+[data-theme="light"] .section-heading,
+[data-theme="light"] .section-label,
+[data-theme="light"] .other-title,
+[data-theme="light"] .admin-title,
+[data-theme="light"] .login-title,
+[data-theme="light"] .stat-value,
+[data-theme="light"] .bio-name,
+[data-theme="light"] .tl-title,
+[data-theme="light"] .edu-degree,
+[data-theme="light"] .form-title,
+[data-theme="light"] .success-title,
+[data-theme="light"] .article-title,
+[data-theme="light"] .proj-title,
+[data-theme="light"] .comment-author,
+[data-theme="light"] .pending-author {
+  color: #111 !important;
+}
+
+/* ─── Subtitles italic ────────────────────────────────────── */
+[data-theme="light"] .page-subtitle,
+[data-theme="light"] .blog-page-sub,
+[data-theme="light"] .proj-page-sub {
   color: #888 !important;
 }
 
-/* Tertiary / timestamps / uppercase labels — was #3a3a3a, #363636, #383838, #2e2e2e */
-.exp-period,
-.tl-period,
-.tl-duration,
-.exp-location,
-.tl-location,
-.edu-year,
-.exp-duration,
-.skill-label,
-.card-desc,
-.footer-nav-title,
-.footer-copy,
-.footer-status,
-.cli-label,
-.field-label,
-.tool-level,
-.legend-label,
-.legend-item {
-  color: #666 !important;
-}
-
-/* List bullets text — was #646464, #686868 */
-.exp-bullets li,
-.tl-bullets li,
-.up-to-list li {
-  color: #b0aca4 !important;
-}
-
-/* Tool names in skill cards — was #5a5a5a */
-.tool-name {
-  color: #a0a0a0 !important;
-}
-
-/* Skill card hover tool name — was #848484 */
-.skill-card:hover .tool-name {
-  color: #d0ccc5 !important;
-}
-
-/* Skill value in experience technical skills — was #686868 */
-.skill-value {
-  color: #a0a0a0 !important;
-}
-
-/* Nav links — was #4a4a4a */
-.nav-link {
-  color: #888 !important;
-}
-.nav-link.active {
-  color: #f0ede8 !important;
-}
-.nav-link:hover {
-  color: #d0ccc5 !important;
-}
-.mobile-nav-link {
-  color: #888 !important;
-}
-.mobile-nav-link.active {
-  color: #f0ede8 !important;
-}
-
-/* Footer nav links — was #3a3a3a */
-.footer-nav-link {
-  color: #888 !important;
-}
-.footer-nav-link:hover {
-  color: #ccc !important;
-}
-
-/* Footer social links */
-.footer-social-link {
-  color: #888 !important;
-}
-
-/* Contact link items */
-.cli-value {
-  color: #a0a0a0 !important;
-}
-.contact-link-item:hover .cli-value {
-  color: #d0ccc5 !important;
-}
-
-/* Cert items */
-.cert-item {
-  color: #a0a0a0 !important;
-}
-
-/* Project tags */
-.proj-tag {
-  color: #888 !important;
-}
-.proj-card:hover .proj-tag {
-  color: #b0b0b0 !important;
-}
-
-/* "What I'm up to" bullets strong */
-.up-to-list li strong {
-  color: #e8e4dd !important;
-}
-
-/* Open to work banner text */
-.open-banner {
-  color: #888 !important;
-}
-
-/* Status pill in footer */
-.footer-status {
-  color: #666 !important;
-}
-
-/* Ghost bullet dots — keep very dark, they're decorative */
-.tl-bullets li::before,
-.exp-bullets li::before {
+/* ─── Body / paragraph text ───────────────────────────────── */
+[data-theme="light"] .bio-body,
+[data-theme="light"] .body-text,
+[data-theme="light"] .tl-desc,
+[data-theme="light"] .edu-note,
+[data-theme="light"] .contact-blurb,
+[data-theme="light"] .article-excerpt,
+[data-theme="light"] .comment-content,
+[data-theme="light"] .success-text {
   color: #555 !important;
 }
+[data-theme="light"] .bio-body strong { color: #222 !important; }
+[data-theme="light"] .contact-blurb strong { color: #333 !important; }
 
-/* Placeholder dots in skill cards */
-.tool-icon-dot {
-  background: #555 !important;
+/* ─── Secondary text ──────────────────────────────────────── */
+[data-theme="light"] .bio-role,
+[data-theme="light"] .tl-company,
+[data-theme="light"] .edu-uni,
+[data-theme="light"] .form-hint,
+[data-theme="light"] .pending-article {
+  color: #777 !important;
 }
 
-/* Timeline / experience text that was too muted */
-.exp-period, .tl-period { color: #777 !important; }
-.exp-location, .tl-location { color: #666 !important; }
-.exp-company, .tl-company { color: #999 !important; }
-.edu-uni { color: #999 !important; }
-.edu-year { color: #666 !important; }
-.edu-note { color: #a0a0a0 !important; }
-.cert-year { color: #666 !important; }
+/* ─── Faint text ──────────────────────────────────────────── */
+[data-theme="light"] .tl-period,
+[data-theme="light"] .tl-duration,
+[data-theme="light"] .tl-location,
+[data-theme="light"] .edu-year,
+[data-theme="light"] .cert-year,
+[data-theme="light"] .skill-label,
+[data-theme="light"] .field-label,
+[data-theme="light"] .cli-label,
+[data-theme="light"] .article-meta,
+[data-theme="light"] .article-meta-item,
+[data-theme="light"] .article-row-meta,
+[data-theme="light"] .stat-label,
+[data-theme="light"] .comment-date {
+  color: #aaa !important;
+}
+
+/* ─── List bullets ────────────────────────────────────────── */
+[data-theme="light"] .tl-bullets li,
+[data-theme="light"] .up-to-list li { color: #555 !important; }
+[data-theme="light"] .up-to-list li strong { color: #222 !important; }
+[data-theme="light"] .tl-bullets li::before { color: #ccc !important; }
+[data-theme="light"] .up-to-list li::before { background: #ccc !important; }
+
+/* ─── Skills & certs ──────────────────────────────────────── */
+[data-theme="light"] .skill-value { color: #555 !important; }
+[data-theme="light"] .cert-item {
+  color: #666 !important;
+  border-color: rgba(0,0,0,0.06) !important;
+}
+[data-theme="light"] .cert-dot { background: #4ade80 !important; }
+
+/* ─── Dividers & borders ──────────────────────────────────── */
+[data-theme="light"] .section-divider,
+[data-theme="light"] .section-sep { border-color: rgba(0,0,0,0.08) !important; }
+[data-theme="light"] .timeline-item { border-color: rgba(0,0,0,0.07) !important; }
+[data-theme="light"] .edu-block { border-color: rgba(0,0,0,0.07) !important; }
+[data-theme="light"] .skill-row { border-color: rgba(0,0,0,0.06) !important; }
+[data-theme="light"] .article-meta { border-color: rgba(0,0,0,0.07) !important; }
+[data-theme="light"] .detail-meta {
+  border-color: rgba(0,0,0,0.07) !important;
+  color: #aaa !important;
+}
+
+/* ─── Contact link items ──────────────────────────────────── */
+[data-theme="light"] .contact-link-item {
+  background: #f5f5f5 !important;
+  border-color: rgba(0,0,0,0.07) !important;
+}
+[data-theme="light"] .contact-link-item:hover {
+  background: #eeeeee !important;
+  border-color: rgba(0,0,0,0.13) !important;
+}
+[data-theme="light"] .cli-icon {
+  background: rgba(0,0,0,0.04) !important;
+  border-color: rgba(0,0,0,0.07) !important;
+  color: #bbb !important;
+}
+[data-theme="light"] .contact-link-item:hover .cli-icon { color: #555 !important; }
+[data-theme="light"] .cli-value { color: #777 !important; }
+[data-theme="light"] .contact-link-item:hover .cli-value { color: #333 !important; }
+[data-theme="light"] .cli-arrow { color: #ccc !important; }
+[data-theme="light"] .contact-link-item:hover .cli-arrow { color: #888 !important; }
+
+/* ─── Contact form ────────────────────────────────────────── */
+[data-theme="light"] .contact-form-wrap {
+  background: #f8f8f8 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .contact-form-wrap::before {
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent) !important;
+}
+
+/* ─── Form inputs ─────────────────────────────────────────── */
+[data-theme="light"] .field-input {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  color: #111 !important;
+}
+[data-theme="light"] .field-input::placeholder { color: #ccc !important; }
+[data-theme="light"] .field-input:focus {
+  border-color: rgba(0,0,0,0.25) !important;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.04) !important;
+}
+[data-theme="light"] .field-label.focused { color: #555 !important; }
+
+/* ─── Submit / form buttons ───────────────────────────────── */
+[data-theme="light"] .submit-btn,
+[data-theme="light"] .btn-submit,
+[data-theme="light"] .btn-login {
+  background: rgba(0,0,0,0.06) !important;
+  border-color: rgba(0,0,0,0.12) !important;
+  color: #333 !important;
+}
+[data-theme="light"] .submit-btn:hover,
+[data-theme="light"] .btn-submit:hover,
+[data-theme="light"] .btn-login:hover { background: rgba(0,0,0,0.1) !important; }
+
+/* ─── Cards ───────────────────────────────────────────────── */
+[data-theme="light"] .article-card,
+[data-theme="light"] .proj-card {
+  background: #f8f8f8 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .article-card:hover,
+[data-theme="light"] .proj-card:hover {
+  background: #f0f0f0 !important;
+  border-color: rgba(0,0,0,0.14) !important;
+}
+[data-theme="light"] .stat-card,
+[data-theme="light"] .comment-card,
+[data-theme="light"] .pending-card,
+[data-theme="light"] .login-card {
+  background: #f8f8f8 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+
+/* ─── Card placeholder dot grid ──────────────────────────── */
+[data-theme="light"] .article-cover-placeholder,
+[data-theme="light"] .proj-img-placeholder {
+  background: #eeeeee !important;
+  border-color: rgba(0,0,0,0.05) !important;
+}
+[data-theme="light"] .placeholder-grid span,
+[data-theme="light"] .proj-img-placeholder-inner span { background: #000 !important; }
+
+/* ─── Tags / pills ────────────────────────────────────────── */
+[data-theme="light"] .article-tag,
+[data-theme="light"] .proj-tag,
+[data-theme="light"] .detail-tag {
+  color: #999 !important;
+  border-color: rgba(0,0,0,0.09) !important;
+  background: rgba(0,0,0,0.03) !important;
+}
+[data-theme="light"] .tag-pill {
+  color: #999 !important;
+  border-color: rgba(0,0,0,0.09) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .tag-pill.active {
+  color: #111 !important;
+  background: rgba(0,0,0,0.06) !important;
+  border-color: rgba(0,0,0,0.18) !important;
+}
+
+/* ─── Search ──────────────────────────────────────────────── */
+[data-theme="light"] .search-input {
+  background: #f5f5f5 !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  color: #111 !important;
+}
+[data-theme="light"] .search-input::placeholder { color: #ccc !important; }
+[data-theme="light"] .search-input:focus {
+  background: #fff !important;
+  border-color: rgba(0,0,0,0.2) !important;
+}
+[data-theme="light"] .search-icon { color: #ccc !important; }
+
+/* ─── Nav buttons ─────────────────────────────────────────── */
+[data-theme="light"] .proj-link-primary,
+[data-theme="light"] .read-more,
+[data-theme="light"] .admin-btn,
+[data-theme="light"] .btn-primary {
+  background: rgba(0,0,0,0.05) !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  color: #333 !important;
+}
+[data-theme="light"] .proj-link-primary:hover,
+[data-theme="light"] .read-more:hover,
+[data-theme="light"] .admin-btn:hover,
+[data-theme="light"] .btn-primary:hover {
+  background: rgba(0,0,0,0.09) !important;
+  border-color: rgba(0,0,0,0.18) !important;
+}
+[data-theme="light"] .proj-link-ghost,
+[data-theme="light"] .btn-ghost {
+  color: #999 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .proj-link-ghost:hover,
+[data-theme="light"] .btn-ghost:hover {
+  color: #333 !important;
+  border-color: rgba(0,0,0,0.18) !important;
+}
+
+/* ─── Open to work banner ─────────────────────────────────── */
+[data-theme="light"] .open-banner {
+  background: rgba(74,222,128,0.05) !important;
+  border-color: rgba(74,222,128,0.2) !important;
+  color: #777 !important;
+}
+
+/* ─── Photo slots (about page) ────────────────────────────── */
+[data-theme="light"] .photo-side,
+[data-theme="light"] .photo-main { background: #eeeeee !important; }
+
+/* ─── Admin ───────────────────────────────────────────────── */
+[data-theme="light"] .admin-header,
+[data-theme="light"] .editor-header {
+  border-color: rgba(0,0,0,0.08) !important;
+  background: #ffffff !important;
+}
+[data-theme="light"] .status-draft {
+  color: #aaa !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+
+/* ─── Markdown prose ──────────────────────────────────────── */
+[data-theme="light"] .prose p,
+[data-theme="light"] .prose ul,
+[data-theme="light"] .prose ol { color: #444 !important; }
+[data-theme="light"] .prose h1,
+[data-theme="light"] .prose h2,
+[data-theme="light"] .prose h3 { color: #111 !important; }
+[data-theme="light"] .prose code {
+  background: rgba(0,0,0,0.05) !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  color: #7c3aed !important;
+}
+[data-theme="light"] .prose pre {
+  background: #f5f5f5 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .prose pre code { color: #333 !important; }
+[data-theme="light"] .prose blockquote {
+  border-color: rgba(0,0,0,0.15) !important;
+  color: #888 !important;
+}
+[data-theme="light"] .back-link { color: #bbb !important; }
+[data-theme="light"] .back-link:hover { color: #555 !important; }
+
+/* ─── Home page specific ──────────────────────────────────── */
+[data-theme="light"] .grid-lines {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px) !important;
+}
+[data-theme="light"] .status-pill {
+  background: rgba(0,0,0,0.04) !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  color: #888 !important;
+}
+[data-theme="light"] .hello-bubble {
+  background: rgba(0,0,0,0.04) !important;
+  border-color: rgba(0,0,0,0.08) !important;
+  color: #bbb !important;
+}
+[data-theme="light"] .icon-bubble {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .ring { border-color: rgba(0,0,0,0.06) !important; }
+
+/* ─── Social links ────────────────────────────────────────── */
+[data-theme="light"] .social-link { color: #ccc !important; }
+[data-theme="light"] .social-link:hover { color: #555 !important; }
+
+/* ─── Footer ──────────────────────────────────────────────── */
+[data-theme="light"] .footer-nav-link { color: #bbb !important; }
+[data-theme="light"] .footer-nav-link:hover { color: #333 !important; }
+[data-theme="light"] .footer-social-link { color: #ccc !important; }
+[data-theme="light"] .footer-copy,
+[data-theme="light"] .footer-status { color: #ccc !important; }
+
+/* ─── Skeleton ────────────────────────────────────────────── */
+[data-theme="light"] .skeleton {
+  background: linear-gradient(90deg, #eeeeee 25%, #f5f5f5 50%, #eeeeee 75%) !important;
+  background-size: 200% 100% !important;
+}
+
+/* ─── Pagination ──────────────────────────────────────────── */
+[data-theme="light"] .page-btn {
+  border-color: rgba(0,0,0,0.08) !important;
+  color: #aaa !important;
+}
+[data-theme="light"] .page-btn:hover:not(:disabled) {
+  color: #333 !important;
+  border-color: rgba(0,0,0,0.2) !important;
+}
+[data-theme="light"] .page-btn.active {
+  background: rgba(0,0,0,0.07) !important;
+  color: #111 !important;
+  border-color: rgba(0,0,0,0.15) !important;
+}
+
+/* ─── Empty state ─────────────────────────────────────────── */
+[data-theme="light"] .empty-state { color: #ccc !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   DARK MODE — keep existing
+   ══════════════════════════════════════════════════════════════ */
+[data-theme="dark"] .bio-body,
+[data-theme="dark"] .body-text,
+[data-theme="dark"] .tl-desc,
+[data-theme="dark"] .edu-note,
+[data-theme="dark"] .contact-blurb { color: #b0aca4 !important; }
+[data-theme="dark"] .bio-role,
+[data-theme="dark"] .tl-company,
+[data-theme="dark"] .edu-uni,
+[data-theme="dark"] .page-subtitle,
+[data-theme="dark"] .proj-page-sub { color: #888 !important; }
+[data-theme="dark"] .tl-period,
+[data-theme="dark"] .tl-location,
+[data-theme="dark"] .edu-year,
+[data-theme="dark"] .footer-copy,
+[data-theme="dark"] .footer-status,
+[data-theme="dark"] .field-label { color: #666 !important; }
+[data-theme="dark"] .nav-link { color: #888 !important; }
+[data-theme="dark"] .nav-link.active { color: #f0ede8 !important; }
+[data-theme="dark"] .mobile-nav-link { color: #888 !important; }
+[data-theme="dark"] .mobile-nav-link.active { color: #f0ede8 !important; }
+[data-theme="dark"] .footer-nav-link { color: #888 !important; }
+[data-theme="dark"] .footer-nav-link:hover { color: #ccc !important; }
+[data-theme="dark"] .footer-social-link { color: #888 !important; }
+[data-theme="dark"] .tl-bullets li,
+[data-theme="dark"] .up-to-list li { color: #b0aca4 !important; }
+[data-theme="dark"] .skill-value { color: #626262 !important; }
+[data-theme="dark"] .cert-item { color: #686868 !important; }
+[data-theme="dark"] .open-banner { color: #888 !important; }
+[data-theme="dark"] .proj-tag { color: #888 !important; }

@@ -51,7 +51,7 @@ function Portofolio() {
 
         .projects-inner {
           max-width: 820px;
-          margin: 0 auto;
+          margin:  auto;
           padding: 80px 24px 120px;
         }
 
