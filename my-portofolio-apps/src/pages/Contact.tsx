@@ -4,8 +4,8 @@ const contactLinks = [
   {
     icon: "ri-mail-line",
     label: "Email",
-    value: "julhammaulana@gmail.com",
-    href: "mailto:julhammaulana@gmail.com",
+    value: "maulanajulham33@gmail.com",
+    href: "mailto:maulanajulham33@gmail.com",
   },
   {
     icon: "ri-linkedin-fill",
@@ -22,8 +22,8 @@ const contactLinks = [
   {
     icon: "ri-instagram-fill",
     label: "Instagram",
-    value: "@maulanajulham_",
-    href: "https://www.instagram.com/maulanajulham_/",
+    value: "@dophamint_",
+    href: "https://www.instagram.com/dophamint_/",
   },
 ];
 

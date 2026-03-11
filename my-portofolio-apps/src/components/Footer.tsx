@@ -308,7 +308,7 @@ const Footer = () => {
               </div>
               <a href="mailto:maulanajulham33@gmail.com" className="footer-email-link">
                 <i className="ri-mail-line" style={{ fontSize: "0.85rem" }} />
-                julhammaulana@gmail.com
+                maulanajulham33@gmail.com
               </a>
             </div>
 
