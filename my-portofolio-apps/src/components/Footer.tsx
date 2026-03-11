@@ -306,7 +306,7 @@ const Footer = () => {
                 Let's build something<br />
                 <em>meaningful together.</em>
               </div>
-              <a href="mailto:julhammaulana@gmail.com" className="footer-email-link">
+              <a href="mailto:maulanajulham33@gmail.com" className="footer-email-link">
                 <i className="ri-mail-line" style={{ fontSize: "0.85rem" }} />
                 julhammaulana@gmail.com
               </a>
