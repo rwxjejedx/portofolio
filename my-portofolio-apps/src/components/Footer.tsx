@@ -17,13 +17,13 @@ const socials = [
     glow: "#ffffff",
   },
   {
-    href: "https://www.instagram.com/maulanajulham_/",
+    href: "https://www.instagram.com/",
     icon: "ri-instagram-fill",
     label: "Instagram",
     glow: "#e1306c",
   },
   {
-    href: "https://x.com/Maulanajulham_",
+    href: "https://x.com/drxjejedx/",
     icon: "ri-twitter-x-fill",
     label: "Twitter/X",
     glow: "#ffffff",
@@ -361,10 +361,7 @@ const Footer = () => {
             </span>
           </div>
         </div>
-
-        {/* Ghost watermark name */}
-        <div className="footer-name" aria-hidden="true">Julham</div>
-      </footer>
+   </footer>
     </>
   );
 };
